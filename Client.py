@@ -223,7 +223,7 @@ class Client:
             # request = ...
             request = "PLAY " + "\n" + str(self.rtspSeq)
 
-            self.rtspSocket.send(request)
+            self.rtspSocket.send(bytes(request, encoding="UTF-8"))
             print('-' * 60 + "\nPLAY request sent to Server...\n" + '-' * 60)
             # Keep track of the sent request.
             # self.requestSent = ...
@@ -237,7 +237,7 @@ class Client:
             # Write the RTSP request to be sent.
             # request = ...
             request = "PAUSE " + "\n" + str(self.rtspSeq)
-            self.rtspSocket.send(request)
+            self.rtspSocket.send(bytes(request, encoding="UTF-8"))
             print('-' * 60 + "\nPAUSE request sent to Server...\n" + '-' * 60)
             # Keep track of the sent request.
             # self.requestSent = ...
@@ -253,7 +253,7 @@ class Client:
             # Write the RTSP request to be sent.
             # request = ...
             request = "TEARDOWN " + "\n" + str(self.rtspSeq)
-            self.rtspSocket.send(request)
+            self.rtspSocket.send(bytes(request, encoding="UTF-8"))
             print('-' * 60 + "\nTEARDOWN request sent to Server...\n" +
                   '-' * 60)
             # Keep track of the sent request.
